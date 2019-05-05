@@ -43,12 +43,19 @@
             <ul class="categories">
                <li><span><a href="#polyfill">Полифил</a></span></li>
                <li><span><a href="#getElement">Получить элемент</a></span></li>
-               <li><span><a href="#addEventListener">Обработать событие</a></span></li>
-               <li><span><a href="#promise">Промисы</a></span></li>
-               <li><span><a href="#get-data-form">Получение данных с формы</a></span></l>
+               <li><span><a href="#event">Обработать событие</a></span></li>
+               <li><span><a href="#getData">Получение данных от пользователя</a></span></l>
+               <li><span><a href="#rounding">Округление, длина дробной части</a></span></l>
+               <li><span><a href="#getTime">Получение даты из введенного значения пользователем</a></span></l>
+               <li><span><a href="#convert_str_arr">Преобразование строки в массив используя разделитель</a></span></l>
+                   
+                  
+                  
+                  <!-- <li><span><a href="#promise">Промисы</a></span></li>
+               
                <li><span><a href="#">Преобразование в JSON</a></span></li>
                <li><span><a href="#">Отправка данных на сервер</a></span></li>
-               <li><span><a href="#">Отмена стандартного поведения</a></span></li>
+               <li><span><a href="#">Отмена стандартного поведения</a></span></li> -->
                <!-- <li class="last"><span><a href="#">Calendar</a></span></li> -->
             </ul>
 
@@ -201,57 +208,104 @@
                <h4>по селектору класса (один элемент)</h4>
                <h5>HTML</h5>
                <textarea class="viewcode">
-                     <input class="choose-income" type="text" id="income">
+                     <button class="count-budget-btn">Рассчитать</button>
                   </textarea>
                <h5>JavaScript</h5>
                <textarea class="viewcode">
-                     incomeItem = document.querySelector('.choose-income')
+                  // countBtn = document.getElementsByTagName('button')[2],
+                  countBtn.disabled = true;
                   </textarea>
                   <h6>Источник <a href="projects/budget/index.html">Расчет дневного бюджета</a></h6>
-
-                  countBtn.disabled = true;
-
-
-
-
                <!--  -->
-               <h2 id="addEventListener">Обработать событие <span>click</span></h2>
+               <h2 id="event">Обработать событие <span>click</span></h2>
                <h4>методом addEventListener</h4>
+               <h5>HTML</h5>
                <textarea class="viewcode">
-                     startBtn.addEventListener('click', () => { console.log(time); }
+                     <button class="start" id="start">Начать расчет</button>
                   </textarea>
+               <h5>JavaScript</h5>
+               <textarea class="viewcode" rows="6">
+                     // startBtn = document.getElementById("start");
+                     startBtn.addEventListener('click', () => {
+                       // time = prompt('Введите дату в формате YYYY-MM-DD', '');
+                       // ...
+                    });
+                  </textarea>
+                  <h6>Источник <a href="projects/budget/index.html">Расчет дневного бюджета</a></h6>
+               <!--  -->
                   <!--  -->
+               <h2 id="getData">Получение данных от пользователя</h2>
+               <h4>с помощью диалогового окна prompt</h4>
+               <h5>browser</h5>
+               <div><img src="img_code/prompt_window.png" alt="prompt_window"></div>
+               <h5>JavaScript</h5>
+               <textarea class="viewcode">
+                     time = prompt('Введите дату в формате YYYY-MM-DD', '');
+                  </textarea>
+                  <h6>Источник <a href="projects/budget/index.html">Расчет дневного бюджета</a></h6>
+               <!--  -->
+               <h2 id="verifyData">Проверка введенных данных пользователем</h2>
+               <h4>только числовое значение ИЛИ пустая строка ИЛИ кнопка "Отмена"</h4>
+               <h5>JavaScript</h5>
+               <textarea class="viewcode" rows="3">
+                     while (isNaN(money) || money == '' || money == null) {
+                        money = prompt("Ваш бюджет?", "");
+                    }
+                  </textarea>
+                  <h6>Источник <a href="projects/budget/index.html">Расчет дневного бюджета</a></h6>
+               <!--  -->
+               <!--  -->
+               <h2 id="rounding">Округление, длина дробной части</h2>
+               <h4>до целого</h4>
+               <h5>JavaScript</h5>
+               <textarea class="viewcode" rows="3">
+                     budgetValue.textContent = money.toFixed();
+                  </textarea>
+                  <h6>Источник <a href="projects/budget/index.html">Расчет дневного бюджета</a></h6>
+               <!--  -->
+                <!--  -->
+                <h2 id="getTime">Получение даты из введенного значения пользователем</h2>
+                <h4>год, месяц, день</h4>
+                <h5>JavaScript</h5>
+                <textarea class="viewcode" rows="5">
+                     // time = prompt('Введите дату в формате YYYY-MM-DD', '');
+                     yearValue.value = new Date(Date.parse(time)).getFullYear();
+                     monthValue.value = new Date(Date.parse(time)).getMonth() + 1;
+                     dayValue.value = new Date(Date.parse(time)).getDate();
+                   </textarea>
+                   <h6>Источник <a href="projects/budget/index.html">Расчет дневного бюджета</a></h6>
+                <!--  -->
+               <!--  -->
+               <h2 id="convert_str_arr ">Преобразование строки в массив используя разделитель</h2>
+               <h4>год, месяц, день</h4>
+               <h5>JavaScript</h5>
+               <textarea class="viewcode" rows="5">
+                     appData.income = items.split(',');
+                  </textarea>
+                  <h6>Источник <a href="projects/budget/index.html">Расчет дневного бюджета</a></h6>
+               <!--  -->
+
+
+               
+               
+                
+               
+
+               
+               
+               
 
 
 
 
 
-
-
-               <h2 id="promise">Промисы <span>Promise</span></h2>
-               <ul class="categories">
-                  <li>Для поддержки в старых броузерах использовать <a href="js-code.html">Полифил</a></li>
-               </ul>
-               <h2 id="get-data-form">Получение данных с форм <span>form</span></h2>
-               <ul class="categories">
-                  <li>Получить элемент <a href="#">form</a></li>
-                  <li>Повесить обработчик событий на форму <a href="#">addEventListener</a></li>
-                  <li>Отмена стандартного поведения броузера <a href="#">preventDefault()</a></li>
-               </ul>
-               <h2 id="get-el-web">Получить элемент <span>со страницы</span></h2>
-               <ul class="categories">
-                  <li>Получить элемент со страницы по селектору <a href="#">document.querySelector('')</a></li>
-                  <li>Получить элемент со страницы по id <a href="#">document.getElementById('')</a></li>
-               </ul>
-
-            </div>
 
 
 
 
 
             <!-- Конец блока Решение -->
-
+            </div>
          </section>
       </div>
    </div>
