@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <title>Система програмирования с помощью прецедентов</title>
+   <meta charset="utf-8">
+   <!-- <meta name="description" content="Place your description here"> -->
+   <!-- <meta name="keywords" content="put, your, keyword, here"> -->
+   <meta name="author" content="">
+   <link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
+   <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+   <script type="text/javascript" src="js/script.js"></script>
+</head>
+
+<body id="page1">
+   <div class="wrap">
+      <!-- header -->
+      <header>
+         <div class="container">
+            <h1><a href="index.html">Прецеденты</a></h1>
+            <nav>
+               <ul>
+                  <li class="current"><a href="index.html" class="m1">JS - прецеденты</a></li>
+                  <li><a href="js-code.html" class="m2">JS - код</a></li>
+                  <li><a href="projects.html" class="m3">Проекты</a></li>
+                  <li><a href="contact-us.html" class="m4">Контакты</a></li>
+                  <li class="last"><a href="sitemap.html" class="m5">Карта сайта</a></li>
+               </ul>
+            </nav>
+            <form action="" id="search-form">
+               <fieldset>
+                  <div class="rowElem">
+                     <input type="text">
+                     <a href="#">Поиск</a></div>
+               </fieldset>
+            </form>
+         </div>
+      </header>
+      <div class="container">
+         <!-- aside -->
+         <aside>
+            <h3>Требования</h3>
+            <ul class="categories">
+               <li><span><a href="#polyfill">Полифил</a></span></li>
+               <li><span><a href="#getElement">Получить элемент</a></span></li>
+               <li><span><a href="#addEventListener">Обработать событие</a></span></li>
+               <li><span><a href="#promise">Промисы</a></span></li>
+               <li><span><a href="#get-data-form">Получение данных с формы</a></span></l>
+               <li><span><a href="#">Преобразование в JSON</a></span></li>
+               <li><span><a href="#">Отправка данных на сервер</a></span></li>
+               <li><span><a href="#">Отмена стандартного поведения</a></span></li>
+               <!-- <li class="last"><span><a href="#">Calendar</a></span></li> -->
+            </ul>
+
+            <!-- Подписка -->
+            <!-- <form action="" id="newsletter-form">
+            <fieldset>
+            <div class="rowElem">
+               <h2>Newsletter</h2>
+               <input type="email" value="Enter Your Email Here" onFocus="if(this.value=='Enter Your Email Here'){this.value=''}" onBlur="if(this.value==''){this.value='Enter Your Email Here'}" >
+               <div class="clear"><a href="#" class="fleft">Unsubscribe</a><a href="#" class="fright" onClick="document.getElementById('newsletter-form').submit()">Submit</a></div>
+            </div>
+            </fieldset>
+         </form> -->
+            <h2>Важные <span>события</span></h2>
+            <ul class="news">
+               <li><strong>04 мая 2019</strong>
+                  <h4><a href="#">Курс от Udemy</a></h4>
+                  Полный курс по JavaScript - с нуля до результата. Автор - Иван Петриченко.
+               </li>
+               <li><strong>03 апреля 2019</strong>
+                  <h4><a href="#">Книга</a></h4>
+                  "Изучаем программирование JavaScript". Автор - Эрик Фриман.
+               </li>
+               <li><strong>26 марта 2019</strong>
+                  <h4><a href="#">Курс от Hexlet</a></h4>
+                  "Основы программирования"
+               </li>
+               <li><strong>23 марта 2019</strong>
+                  <h4><a href="#">Курс от Hexlet</a></h4>
+                  "Профессия: Фронтенд JS-программист"
+               </li>
+            </ul>
+         </aside>
+         <!-- content -->
+         <section id="content">
+
+            <!-- Old content -->
+            <!-- <div id="banner">
+            <h2>Professional <span>Online Education <span>Since 1992</span></span></h2>
+         </div>
+         <div class="ic">More Website Templates at Template</div>
+         <div class="inside">
+            <h2>Recent <span>Articles</span></h2>
+            <ul class="list">
+               <li><span><img src="images/icon1.png"></span>
+                  <h4>About Template</h4>
+                  <p>Free 1028X768 Optimized Website Template from TemplateMonster.com! We hope that you like this tem- plate and will use for your websites.</p>
+               </li>
+               <li><span><img src="images/icon2.png"></span>
+                  <h4>Branch Office</h4>
+                  <p>Sed ut perspiciatis unomnis iste natus error sit volup tatem accusantiu loremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore.</p>
+               </li>
+               <li class="last"><span><img src="images/icon3.png"></span>
+                  <h4>Student’s Time</h4>
+                  <p>Eque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempo- ra incidunt ut labore.</p>
+               </li>
+            </ul>
+            <h2>Move Forward <span>With Your Education</span></h2>
+            <p><span class="txt1">Student’s Site</span> is a free web template created by Template team. This website template is optimized for 1024X768 screen resolution. </p>
+            <div class="img-box"><img src="images/1page-img.jpg">This website template can be delivered in two packages - with PSD source files included and without them. If you need PSD source files, please go to the template download page at TemplateMonster to leave the e-mail address that you want the template ZIP package to be delivered to.</div>
+            <p class="p0">This website template has several pages: <a href="index.html">Home</a>, <a href="about-us.html">About us</a>, <a href="articles.html">Articles</a> (with Article page), <a href="contact-us.html">Contact us</a> (note that contact us form – doesn’t work), <a href="sitemap.html">Site Map</a>.</p>
+         </div> -->
+            <!-- End Old content -->
+
+            <!-- Блок Решение -->
+            <div class="inside">
+               <h2 id="polyfill">Полифил <span>Polyfill</span></h2>
+               <h4>Promise</h4>
+               <textarea class="viewcode">
+                     <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js"></script>
+                  </textarea>
+                  <h6>Источник <a href="https://babeljs.io/docs/en/babel-polyfill">Babel polyfill</a></h6>
+               <!--  -->
+               <h2 id="getElement">Получить элемент <span>со страницы</span></h2>
+               <h4>по селектору класса (один элемент)</h4>
+               <h5>HTML</h5>
+               <textarea class="viewcode">
+                     <input class="choose-income" type="text" id="income">
+                  </textarea>
+               <h5>JavaScript</h5>
+               <textarea class="viewcode">
+                     incomeItem = document.querySelector('.choose-income')
+                  </textarea>
+                  <h6>Источник <a href="projects/budget/index.html">Расчет дневного бюджета</a></h6>
+               <!--  -->
+               <h4>по селектору класса (все элементы одного селектора)</h4>
+               <h5>HTML</h5>
+               <textarea class="viewcode" rows="3">
+                     <input class="optionalexpenses-item" type="text" id="optionalexpenses_1">
+		      <input class="optionalexpenses-item" type="text" id="optionalexpenses_2">
+		      <input class="optionalexpenses-item" type="text" id="optionalexpenses_3">
+               </textarea>
+               <h5>JavaScript</h5>
+               <textarea class="viewcode">
+                     optionalExpensesItem = document.querySelectorAll('.optionalexpenses-item')
+                  </textarea>
+                  <h6>Источник <a href="projects/budget/index.html">Расчет дневного бюджета</a></h6>
+                  <!--  -->
+               <h4>по Id</h4>
+               <h5>HTML</h5>
+               <textarea class="viewcode" rows="1">
+                     <button class="start" id="start">Начать расчет</button>
+               </textarea>
+               <h5>JavaScript</h5>
+               <textarea class="viewcode">
+                     startBtn = document.getElementById("start")
+                  </textarea>
+                  <h6>Источник <a href="projects/budget/index.html">Расчет дневного бюджета</a></h6>
+                  <!--  -->
+                  <h4>по ClassName (один элемент)</h4>
+                  <h5>HTML</h5>
+                  <textarea class="viewcode" rows="1">
+                        <div class="budget-value"></div>
+                  </textarea>
+                  <h5>JavaScript</h5>
+                  <textarea class="viewcode">
+                        budgetValue = document.getElementsByClassName('budget-value')[0]
+                     </textarea>
+                     <h6>Источник <a href="projects/budget/index.html">Расчет дневного бюджета</a></h6>
+                  <!--  -->
+                     <!--  -->
+                  <h4>по ClassName (все элементы одного класса)</h4>
+                  <h5>HTML</h5>
+                  <textarea class="viewcode" rows="4">
+                        <input class="expenses-item" type="text" id="expenses_1" placeholder="Наименование">
+			<input class="expenses-item" type="text" id="expenses_2" placeholder="Цена">
+			<input class="expenses-item" type="text" id="expenses_3" placeholder="Наименование">
+			<input class="expenses-item" type="text" id="expenses_4" placeholder="Цена">
+                  </textarea>
+                  <h5>JavaScript</h5>
+                  <textarea class="viewcode">
+                        expensesItem = document.getElementsByClassName('expenses-item')
+                     </textarea>
+                     <h6>Источник <a href="projects/budget/index.html">Расчет дневного бюджета</a></h6>
+                  <!--  -->
+                  <!--  -->
+                  <h4>по TagName (один элемент)</h4>
+                  <h5>HTML</h5>
+                  <textarea class="viewcode" rows="1">
+                        <button class="expenses-item-btn">Утвердить</button>
+                  </textarea>
+                  <h5>JavaScript</h5>
+                  <textarea class="viewcode">
+                        expensesBtn = document.getElementsByTagName('button')[0]
+                     </textarea>
+                     <h6>Источник <a href="projects/budget/index.html">Расчет дневного бюджета</a></h6>
+                  <!--  -->
+                      <!--  -->
+               <h2 id="getElement">Сделать кнопку не активной. <span>read only</span></h2>
+               <h4>по селектору класса (один элемент)</h4>
+               <h5>HTML</h5>
+               <textarea class="viewcode">
+                     <input class="choose-income" type="text" id="income">
+                  </textarea>
+               <h5>JavaScript</h5>
+               <textarea class="viewcode">
+                     incomeItem = document.querySelector('.choose-income')
+                  </textarea>
+                  <h6>Источник <a href="projects/budget/index.html">Расчет дневного бюджета</a></h6>
+
+                  countBtn.disabled = true;
+
+
+
+
+               <!--  -->
+               <h2 id="addEventListener">Обработать событие <span>click</span></h2>
+               <h4>методом addEventListener</h4>
+               <textarea class="viewcode">
+                     startBtn.addEventListener('click', () => { console.log(time); }
+                  </textarea>
+                  <!--  -->
+
+
+
+
+
+
+
+               <h2 id="promise">Промисы <span>Promise</span></h2>
+               <ul class="categories">
+                  <li>Для поддержки в старых броузерах использовать <a href="js-code.html">Полифил</a></li>
+               </ul>
+               <h2 id="get-data-form">Получение данных с форм <span>form</span></h2>
+               <ul class="categories">
+                  <li>Получить элемент <a href="#">form</a></li>
+                  <li>Повесить обработчик событий на форму <a href="#">addEventListener</a></li>
+                  <li>Отмена стандартного поведения броузера <a href="#">preventDefault()</a></li>
+               </ul>
+               <h2 id="get-el-web">Получить элемент <span>со страницы</span></h2>
+               <ul class="categories">
+                  <li>Получить элемент со страницы по селектору <a href="#">document.querySelector('')</a></li>
+                  <li>Получить элемент со страницы по id <a href="#">document.getElementById('')</a></li>
+               </ul>
+
+            </div>
+
+
+
+
+
+            <!-- Конец блока Решение -->
+
+         </section>
+      </div>
+   </div>
+   <!-- footer -->
+   <footer>
+      <div class="container">
+         <div class="inside">
+            <div class="wrapper">
+            </div>
+         </div>
+      </div>
+   </footer>
+   </div>
+</body>
+
+</html>

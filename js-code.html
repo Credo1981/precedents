@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <title>Система програмирования с помощью прецедентов</title>
+   <meta charset="utf-8">
+   <!-- <meta name="description" content="Place your description here"> -->
+   <!-- <meta name="keywords" content="put, your, keyword, here"> -->
+   <meta name="author" content="">
+   <link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
+   <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+   <script type="text/javascript" src="js/script.js"></script>
+</head>
+
+<body id="page1">
+   <div class="wrap">
+      <!-- header -->
+      <header>
+         <div class="container">
+            <h1><a href="index.html">Прецеденты</a></h1>
+            <nav>
+               <ul>
+                  <li><a href="index.html" class="m1">JS - прецеденты</a></li>
+                  <li class="current"><a href="js-code.html" class="m2">JS - код</a></li>
+                  <li><a href="projects.html" class="m3">Проекты</a></li>
+                  <li><a href="contact-us.html" class="m4">Контакты</a></li>
+                  <li class="last"><a href="sitemap.html" class="m5">Карта сайта</a></li>
+               </ul>
+            </nav>
+            <form action="" id="search-form">
+               <fieldset>
+                  <div class="rowElem">
+                     <input type="text">
+                     <a href="#">Поиск</a></div>
+               </fieldset>
+            </form>
+         </div>
+      </header>
+      <div class="container">
+         <!-- aside -->
+         <aside>
+            <h3>Функции</h3>
+            <ul class="categories">
+               <li><span><a href="#verify_input_user">Проверка данных введенных пользователем</a></span></li>
+            </ul>
+
+         </aside>
+         <!-- content -->
+         <section id="content">
+
+            <!-- Блок Решение -->
+            <div class="inside">
+               <h2 id="verify_input_user">Проверка данных введенных пользователем</h2>
+               <h4>Promise</h4>
+               <textarea class="viewcode" rows="12">
+                     function chooseExpenses() {
+                        for (let i = 0; i < 2; i++) {
+                            let a = prompt ("Введите обязательную статью расходов в этом месяце", ""),
+                                b = prompt ("Во сколько обойдется?", "");
+                        
+                            if ( typeof(a)==='string' && typeof(a) != null && typeof(b) != null && a != "" && b != "" && a.length < 50) {
+                                appData.expenses[a] = b;
+                            } else {
+                                i--;
+                            }};}
+               </textarea>
+            </div>
+            <!-- Конец блока Решение -->
+         </section>
+      </div>
+   </div>
+   <!-- footer -->
+   <footer>
+      <div class="container">
+         <div class="inside">
+            <div class="wrapper">
+            </div>
+         </div>
+      </div>
+   </footer>
+   </div>
+</body>
+
+</html>
