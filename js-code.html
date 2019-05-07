@@ -43,6 +43,11 @@
             <ul class="categories">
                <li><span><a href="#verify_input_user">Проверка данных введенных пользователем</a></span></li>
                <li><span><a href="#hide_content">Скрыть контент, используя класс модификатор</a></span></li>
+               <li><span><a href="#GenerateNewDigit">Генератор случайных чисел от 0 до 9</a></span></li>
+               <li><span><a href="#push">Функция формирует массив трёх случайных чисел от 0 до 9</a></span></li>
+               <li><span><a href="#join">Функция формирует из массива строку</a></span></li>
+
+
             </ul>
          </aside>
          <!-- content -->
@@ -108,8 +113,99 @@
                   </textarea>
                   <h6>Источник <a href="projects/yoga/index.html">Йога</a></h6>
                <!--  -->
+                   <!--  -->
+               <h2 id="hide_content">Отследить на какой пункт меню нажал пользователь
+                   и в зависимости от этого отобразить соответствующий контент (остальной контент должен быть скрыт) </h2>
+               <h4>используется параметр функции event</h4>
+               <h5>CSS</h5>
+               <textarea class="viewcode" rows="11">
+                     .content .info .hide {
+                        display: none;
+                      }
+                      .content .info .show {
+                        display: -webkit-box;
+                        display: -webkit-flex;
+                        display: -ms-flexbox;
+                        display: flex;
+                      }
+                  </textarea>
+                  <h5>HTML</h5>
+               <textarea class="viewcode" rows="15">
+                     <div class="info-tabcontent fade">
+                           <div class="description">
+                              <div class="description-title">Здоровый позвоночник</div>
+                              <div class="description-text">Йога, массажи и плавание в море - помогут уставшей спине! Индийские йоги считали, что здоровье человека можно определить по тому, насколько здоров и гибок у него позвоночник.<br> Интересно, что бы древние йоги сказали, глядя на современного человека, который уже со школьного возраста мучается болями в спине, работает подолгу в неудобных сидячих позах и не умеет расслабляться, имеет искривление, которое в итоге приведет к болезням других органов? Йоги сказали бы – займись собой и срочно!
+                              </div>
+                              <div class="description-btn">
+                                 Узнать подробнее
+                              </div>
+                           </div>
+                           <div class="photo">
+                              <img src="img/massage.jpg" alt="Massage">
+                           </div>
+                        </div>
+                  </textarea>
+               <h5>JavaScript</h5>
+               <textarea class="viewcode" rows="6">
+                     // tabContent = document.querySelectorAll('.info-tabcontent');
+                     function hideTabContent(a) {
+                        for (let i = a; i < tabContent.length; i++) {
+                            tabContent[i].classList.remove('show');
+                            tabContent[i].classList.add('hide');
+                        }
+                    }
+                  </textarea>
+                  <h6>Источник <a href="projects/yoga/index.html">Йога</a></h6>
+                   <!--  -->
+                   <h2 id="GenerateNewDigit">Генератор случайных чисел от 0 до 9</h2>
+                   <h4>одно случайное число</h4>
+                   <h5>JavaScript</h5>
+                   <textarea class="viewcode" rows="5">
+                     function GenerateNewDigit() {
+                        var rand = (Math.floor(Math.random() * 9) + 1);
+                        return rand; }
+                      </textarea>
+                      <h6>Источник <a href="projects/memory/index.html">Развитие памяти</a></h6>
+                   <!--  -->
+                   <!--  -->
+                   <h2 id="push">Функция формирует массив трёх случайных чисел от 0 до 9</h2>
+                   <h4>добавление в массив случайных чисел</h4>
+                   <h5>JavaScript</h5>
+                   <textarea class="viewcode" rows="7">
+                     function three() {
+                        digit3 = [];
+                        for (var i = 0; i < 3; i++) {
+                            digit3.push(GenerateNewDigit());
+                        }
+                        return digit3; }
+                      </textarea>
+                      <h6>Источник <a href="projects/memory/index.html">Развитие памяти</a></h6>
+                   <!--  -->
+                  <!--  -->
+                  <h2 id="join">Функция формирует из массива строку</h2>
+                  <h4>Преобразование массива в строку (без запятых)</h4>
+                  <h5>JavaScript</h5>
+                  <textarea class="viewcode" rows="5">
+                     function remove_coma(el_arr) {
+                        var item = el_arr.join('');
+                        return item;
+                    }
+                     </textarea>
+                     <h6>Источник <a href="projects/memory/index.html">Развитие памяти</a></h6>
+                  <!--  -->
+
+
+
+                   
                   
-                  
+
+
+
+
+
+
+
+
 
 
             </div>
