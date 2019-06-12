@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Validate phone</title>
+    <style>
+        body {
+            padding: 100px;
+        }
+        input[type=text] {
+            font-size: 1.2em;
+            padding: 0.6em 1.2em;
+            border-radius: 5px;
+            display: inline-block;
+            border: 0;
+            background: #eef;
+            background: rgba(240, 240, 255, 0.9);
+        }
+
+        .result_msg {
+            font-size: 1.2em;
+            padding: 0.6em 1.2em;
+            border-radius: 5px;
+            border: 0;
+            background: #eef;
+            background: rgba(240, 240, 255, 0.9);
+
+        .lead-btn {
+            width: 287px;
+            font-size: 1.2em;
+            padding: 0.6em 1.2em;
+            background: #2749C8;
+            color: white;
+            border-radius: 5px;
+            border: 0;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+            border-bottom: 5px solid #072998;
+        }
+    </style>
+</head>
+<body>
+    <form id="main_form">
+        <!-- Родительских див -->
+        <div align="center">
+            <!-- Дочерние дивы -->
+            <input type="text" id="main_form_phone" placeholder="Введите номер телефона">
+            <br>
+            <!-- Строка в которой будет выводиться сообщение пользователю -->
+            <br>
+            <div id="main_form_phone_err" class="result_msg"></div>
+        </div>
+       <br>
+        <div align="center">
+            <!-- кнопка -->
+            <input type="submit" value="Ввод" id="main_form_btn" class="lead-btn">
+        </div>
+    </form>
+    
+    <script>
+        // Ожидание загрузки страницы
+        window.onload = function() {
+            // Получение элемента submit (кнопка) по id
+            var el_button = document.getElementById('main_form_btn');
+            el_button.onclick = function() {
+                return submitMainForm();
+            };
+        }
+    
+        function submitMainForm() {
+            // Получение элемента из input (Ввод номера телефона) по id
+            var main_form_phone = document.getElementById('main_form_phone');
+            // Получение элемента из div (сообщение пользователя) по id
+            var main_form_phone_err = document.getElementById('main_form_phone_err');
+            // Проверка - если поле ввода не пустое, то вывести сообщение отправлено
+            if(main_form_phone.value != ""){
+                main_form_phone_err.innerHTML = 'Спасибо, ваш номер отправлен';
+                return false;
+            } else {
+                main_form_phone_err.innerHTML = 'Укажите корректный номер телефона';
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

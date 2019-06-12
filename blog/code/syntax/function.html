@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Создание функций function()</title>
+</head>
+<body>
+    <p>function()</p>
+    <p>кодирование без функций</p>
+    <script>
+        // rover
+        var dogName = 'rover';
+        var dogWeight = 23;
+
+        if (dogWeight > 20) {
+            document.write(dogName + " says WOOF WOOF");
+        }else {
+            document.write(dogName + " say woof woof");
+        }
+        
+        // lady
+        var dogName = 'lady';
+        var dogWeight = 17;
+
+        if (dogWeight > 20) {
+            document.write(dogName + " says WOOF WOOF");
+        }else {
+            document.write(dogName + " say woof woof");
+        }
+    </script>
+<p>кодирование с функциями</p>
+<script>
+    // Create function
+    function bark(name, weight){
+        if (weight > 20) {
+        document.write(dogName + " says WOOF WOOF");
+        }else {
+            document.write(dogName + " say woof woof");
+        }
+    }
+
+    // function call
+    bark('rover' , 23);
+    bark('lady', 17);
+    
+    // screening function alert()
+    function screening_alert(literal){
+        alert(literal);
+    }
+
+    //screening_alert('lorem..');
+</script>
+    <p>Развлечение с магнитами с. 121</p>
+    <script>
+        function whatShallWear(temp){
+            if (temp < 60) {
+                document.write('Wear a jacket');
+            }else if (temp < 70) {
+                document.write('Wear a sweater');
+            }else {
+                document.write('Wear a t-shirt');
+            }
+        }
+        whatShallWear(50);
+        whatShallWear(80);
+        whatShallWear(60);
+    </script>
+<p>Вопрос: Если не объявить переменную внутри функции</p>
+<p>Ответ: то функция сама создаст эту переменную и в работе функции не будет ошибке.
+    Но самообявленная переменная внутри функции станет глобальной и будет видна во всей программе.
+</p>
+<script>
+    function calculateArea(r){
+        // var area;
+        
+        if (r <= 0){
+            return 0;
+        }else {
+            area = Math.PI * r * r;
+            return area;
+        }
+    }
+
+    var radius = 5.2;
+    var theArea = calculateArea(radius);
+
+    document.write("The area is: " + theArea + "<br>");
+    document.write("Variable: area: ", area);
+</script>
+<p>Вопрос: Если глобальная и локальная переменная имеет одинаковое наименование, то как они будут работать?</p>
+<p>Ответ: Локальная переменная не оказывает влияние на глобальную переменную и наоборот</p>
+<script>
+    var area = 5;
+    var r = 3;
+    function calculateArea(r){
+        
+        var area;
+        
+        if (r <= 0){
+            return 0;
+        }else {
+            area = Math.PI * r * r;
+            document.write("Local_variable: r: ", r);
+            return area;
+        }
+    }
+
+    var radius = 5.2;
+    var theArea = calculateArea(radius);
+
+    document.write("The area is: " + theArea + "<br>");
+    document.write("Variable: area: ", area + "<br>");
+    document.write("Global_variable: r: ", r);
+</script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Морской бой 2</title>
+    <!-- <style src="css/style.css"></style> -->
+    <style>
+        body {
+    /* Страница должна иметь чёрный фон */
+    background-color:black;
+    }
+    div#board {
+    /*  Игровое поле должно находится в середине страницы,
+        поэтому мы назначаем width значение 1024px
+        (ширина игрового поля) с автоматическим выбором
+        величины полей.
+     */
+    position: relative;
+    width: 1024px;
+    height: 863px;
+    margin: auto;
+    /*  Здесь изображение board.jpg добавляется на страницу
+        как фон элемента <div> "board". Для элемента <div> используется 
+        относительное позиционирование, чтобы мы могли разместить 
+        таблицу, которая будет добавлена на следующем шаге, 
+        относительно этого элемента <div> */
+    background: url("img/board.jpg") no-repeat;
+    }
+    /* Область сообщений для пользователя, размещается в левом верхнем углу игрового поля */
+    div#messageArea {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        color: rgb(83, 175, 19);
+    }
+    /* Двигаем элемент table чтобы он чётко совпадал с фоновым изображением */
+    table {
+        position: absolute;
+        left: 173px;
+        top: 98px;
+        border-spacing: 0px;
+    }
+    /* Устанавливаем размеры ячеек в соответствии с границами ячеек фона */
+    td {
+        width: 94px;
+        height: 94px;
+    }
+    /* Элемент form должен отображаться в правом нижнем углу */
+    form {
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        padding: 15px;
+        background-color: rgb(83, 175, 19);
+    }
+    /* Для элементов input применяется стиль в соответствии с оформлением игрового поля */
+    form input {
+        background-color: rgb(152, 207, 113);
+        border-color: rgb(83, 175, 19);
+        font-style: 1em;
+
+    }
+    /* Добавление класса hit для отображения корабля в который попал пользователь */
+    .hit {
+        background: url("img/ship.png") no-repeat center center;
+    }
+    /* Добавление класса miss для отображения сообщения о промахе пользователя */
+    .miss {
+        background: url("img/miss.png") no-repeat center center;
+    }
+    </style>
+</head>
+<body>
+    <div id="board">
+        <!--  Элемент <div> с идентификатором "messageArea" будет использоваться для
+              вывода сообщений для пользователя -->
+        <div id="messageArea"></div>
+        <!-- Таблица вкладывается в элемент <div> "Board" -->
+        <table>
+            <!-- Строка А -->
+            <tr>
+                <!--  Каждому элементу <td> присваивается идентификатор, определяемый номерами
+                      строки и столбца в таблице-->
+                <td id="00"></td><td id="01"></td><td id="02"></td><td id="03"></td>
+                <td id="04"></td><td id="05"></td><td id="06"></td>
+            </tr>
+            <!-- Строка B -->
+            <tr>
+                <td id="10"></td><td id="11"></td><td id="12"></td><td id="13"></td>
+                <td id="14"></td><td id="15"></td><td id="16"></td>
+            </tr>
+            <!-- Строка C -->
+            <tr>
+                <td id="20"></td><td id="21"></td><td id="22"></td><td id="23"></td>
+                <td id="24"></td><td id="25"></td><td id="26"></td>
+            </tr>
+            <!-- Строка D -->
+            <tr>
+                <td id="30"></td><td id="31"></td><td id="32"></td><td id="33"></td>
+                <td id="34"></td><td id="35"></td><td id="36"></td>
+            </tr>
+            <!-- Строка E -->
+            <tr>
+                <td id="40"></td><td id="41"></td><td id="42"></td><td id="43"></td>
+                <td id="44"></td><td id="45"></td><td id="46"></td>
+            </tr>
+            <!-- Строка F -->
+            <tr>
+                <td id="50"></td><td id="51"></td><td id="52"></td><td id="53"></td>
+                <td id="54"></td><td id="55"></td><td id="56"></td>
+            </tr>
+            <!-- Строка G -->
+            <tr>
+                <td id="60"></td><td id="61"></td><td id="62"></td><td id="63"></td>
+                <td id="64"></td><td id="65"></td><td id="66"></td>
+            </tr>
+        </table>
+        <!--  Элемент form содержит два элемента input: текстовое поле для ввода 
+              координат выстрелов и кнопку отправки данных из формы.-->
+        <form>
+            <input type="text" id="guessInput" placeholder="A0">
+            <input type="button" id="fireButton" value="Fire!">
+        </form>
+    </div>
+
+
+    <!-- Подключение JavaScript -->
+    <script src="js/battleship.js"></script>
+</body>
+</html>

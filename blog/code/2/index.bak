@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>График отпусков</title>
+    <meta charset="utf-8">
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <div id="vacation_gantt"></div>
+    <!-- <script src="js/data.js"></script> -->
+    <script src="js/jquery.min.js"></script><!-- для Bootstrap уже должен быть загружен -->
+    <script src="js/jquery.fn.gantt.js"></script>
+    <script>
+
+/*
+        // console.log(obj);
+
+    // Создаем объект XMLHttpRequest
+    var request = new XMLHttpRequest();
+
+    // Настройка AJAX запроса (метод open)
+    request.open('GET', 'js/chart_gantt.json');
+    request.setRequestHeader('Content-type', 'applicaion/json', 'charset=utf-8');
+    request.send();
+
+    console.log(request);
+
+    // status
+    // statusText
+    // responseText   /  response
+    // readyState
+
+        console.log('Слушать событие request');
+    // Слушать событие request
+    request.addEventListener('readystatechange', function () {
+        if (request.readyState === 4 && request.status == 200) {
+            var obj = JSON.parse(request.response);
+            console.log(obj);
+
+        }else {
+            console.log('сработал else');
+        }
+    });
+
+*/
+
+
+
+    $(function() {
+    "use strict";
+    $.getJSON("js/chart_gantt.json", function(data) {
+    console.log(data);
+});
+    
+
+
+        var res = $('#vacation_gantt');
+        var idx = 1;
+        for (var name in obj) {
+            var divID = 'vacation_gantt' + idx.toString();
+            res.append('<h2>' + name + '</h2><div id="' + divID + '"></div>');
+            RenderVacationChart(obj[name], divID);
+            idx++;
+        }
+        
+    });
+
+    function RenderVacationChart(data, divID) {
+        var dataSource = MakeChartData(data);
+	$('#' + divID).gantt({
+             source: dataSource,
+             months: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"],
+             dow: ["В", "П", "В", "С", "Ч", "П", "С"],
+  	     navigate: "scroll",
+             scale: "days",
+             maxScale: "month",
+             waitText: "Данные загружаются...",
+	     itemsPerPage: 20,
+	});
+    }
+
+    function MakeChartData(data) {
+        var vacationData = {};
+        var chartData = [];
+
+        for (var idx in data) {
+            var inRec = data[idx];
+            if (!(inRec.EmployeeName in vacationData)) {
+                vacationData[inRec.EmployeeName] = [];
+            }
+            var neededData = {
+  	        from: inRec.BeginDate,
+		to: inRec.EndDate,
+		label: inRec.EmployeeName,
+		customClass: "ganttGreen"
+            };
+	    vacationData[inRec.EmployeeName].push(neededData);
+        }
+
+        for (var fio in vacationData) {
+            chartData.push({
+		name: fio,
+		values: vacationData[fio]
+            });
+        }
+        console.log(vacationData);
+        return chartData;
+    }
+
+    </script>
+</body>                     

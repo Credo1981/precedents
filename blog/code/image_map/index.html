@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <div style="PADDING-LEFT:6px;PADDING-RIGHT:8px;PADDING-TOP:5px;PADDING-BOTTOM:4px;">
+                <!-- begin tmpl_main --><!-- title_for_htm nnnn 031 -->
+            <h3>Теги &lt;MAP&gt; и &lt;AREA&gt;</h3>
+            <p align="justify">Сегментированные изображения позволяют создавать графические изображения с несколькими чувствительными областями - ссылками. Т.е. различные фрагменты одного изображения могут являться ссылками на различные ресурсы. Каждое изображение может содержать произвольное количество чувствительных областей.
+            </p>
+            
+            <p align="justify">Для задания чувcтвительных областей изображения используются теги <code>&lt;MAP&gt;</code> и <code>&lt;AREA&gt;</code>
+            
+            Тег <code>&lt;MAP&gt;</code> определяет схему областей и имеет только 1 атрибут:<div id="ctrlcopy" style="position: absolute; left: -99999px;">
+            
+            <br><br>Источник: <a href="http://html.find-info.ru/html/031/map.htm">http://html.find-info.ru/html/031/map.htm</a><br><br>
+            
+            </div>
+            </p><ul>
+                <li><code>NAME</code> - имя схемы (карты) чувствительных областей.
+            </li></ul>
+            <p></p>
+            
+            <p align="justify">
+            Атрибуты вложенных в тег <code>&lt;MAP&gt;</code> тегов <code>&lt;AREA&gt;</code> определяют сами чувствительные области.
+            Каждый тег <code>&lt;AREA&gt;</code> описывает только 1 область. Его атрибуты указывают форму области, ее координаты относительно левого верхнего угла изображения и ссылку, на которую должен указывать данный фрагмент изображения.
+            </p>
+            
+            <p align="justify">
+            Атрибуты тега <code>&lt;AREA&gt;</code>:
+            </p><ul>
+                <li><code>HREF</code> - URL адрес обекта, на который ссылается данная область.
+                </li><li><code>SHAPE</code> - форма области. Может принимать следующие значения: <code>RECT</code>, <code>CIRC</code>, <code>POLY</code>.
+                </li><li><code>COORDS</code> - координаты области. Задание координат зависит от типа области:
+                <table border="1" cellpadding="2" cellspacing="0" width="80%">
+            <tbody><tr>
+                <td>форма области</td>
+                <td>COORDS</td>
+            </tr>
+            <tr>
+                <td><code>RECT</code> - прямоугольник</td>
+                <td>COORDS="A,B,C,D", где A,B - координаты верхнего левого угла области. C,D - координаты правого нижнего угла области.</td>
+            </tr>
+            <tr>
+                <td><code>CIRC</code> - окружность</td>
+                <td>COORDS="A,B,C", где A,B - координаты центра окружности. C - радиус окружности.</td>
+            </tr>
+            <tr>
+                <td><code>POLY</code> - многоугольник</td>
+                <td>COORDS="A,B,C,D, ... ,A,B". Каждая пара задает координаты вершин многоугольника. Первая и последняя пары совпадают задавая замкнутую фигуру.</td>
+            </tr>
+            </tbody></table>
+            </li></ul>
+            
+            Чтобы привязать схему чувствительных областей к изображению в теге <code>IMG</code> необходимо указать атрибут <code>USEMAP</code>.
+            <p></p>
+            <p align="justify">
+            Пример:
+            Возьмем изображение:
+            <img src="images/map_samp.gif" title="HTML" alt="HTML" width="200" height="40" border="0">
+            и создадим на нем 3 чувствительные области.
+            
+            </p><pre>&lt;map name="test"&gt;
+                &lt;area href="/html/031/index.htm"
+                    shape="rect" coords="5,10,98,32"
+                    alt="HTMLHELP. Справочник по HTML"&gt;
+                &lt;area href="/html/031/a.htm"
+                    shape="circ" coords="124,15,14"&gt;
+                &lt;area href="/html/031/head.htm"
+                    shape="poly"
+                    coords="131,39,154,16,191,16,191,39,131,39"&gt;
+            &lt;/map&gt;
+            </pre>
+            
+            теперь прикрепим данную схему к изображению
+            
+            <pre>&lt;img src="images/map_samp.gif" width=200
+            height=40 border="0" usemap="#test"&gt;
+            </pre>
+            
+            <map name="test">
+                <area href="/html/031/index.htm" shape="rect" coords="5,10,98,32" alt="HTMLHELP. Справочник по HTML">
+                <area href="/html/031/a.htm" target="_blank" shape="circ" coords="124,15,14">
+                <area href="/html/031/head.htm" target="_blank" shape="poly" coords="131,39,154,16,191,16,191,39,131,39">
+            </map>
+            
+            А это - картинка с тремя чувствительными областями.<br>
+            <img src="images/map_samp.gif" title="HTML" alt="HTML" width="200" height="40" border="0" usemap="#test">
+            
+            
+            <p></p>
+        </div>
+</body>
+</html>

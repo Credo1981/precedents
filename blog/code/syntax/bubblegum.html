@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Найди БубыльГум!</title>
+</head>
+<body>
+    <p>Поиск реализован с помощью цикла while</p>
+    <script>
+        var products = ["Choo Choo Chocolate", "Icy Mint", "Cake Batter", "Bibblegum"];
+        var hasBubbleGum = [false, false, false, true];
+        var i = 0;
+
+        while (i < hasBubbleGum.length) {
+            if (hasBubbleGum[i]) {
+                document.write(products[i] + " contains Bubble gum");
+            }
+            i = i + 1;
+        }
+    </script>
+
+<p>Поиск реализован с помощью цикла for</p>
+<script>
+    var products = ["Choo Choo Chocolate", "Icy Mint", "Cake Batter", "Bibblegum"];
+    var hasBubbleGum = [false, false, false, true];
+
+    for (i = 0; i < hasBubbleGum.length; i = i + 1) {
+        if (hasBubbleGum[i]) {
+            document.write(products[i] + " contains Bubble gum");
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Работа со строками</title>
+</head>
+<body>
+    <script>
+        var emot = "XOxxOO";
+        var hugs = 0;
+        var kisses = 0;
+
+        emot = emot.trim();
+        console.log("trim()", emot);
+        emot.toUpperCase();
+
+        for (var i = 0; i < emot.length; i++) {
+            if (emot.charAt(i) === "X") {
+                hugs++;
+            } else if (emot.charAt(i) == "O") {
+                kisses++;
+            }
+        }
+        console.log(hugs);
+        console.log(kisses);
+    </script>
+</body>
+</html>

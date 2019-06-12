@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Проверка формы</title>
+    <style>
+        body {
+            width: 287px;
+            margin: auto;
+            padding: 100px;
+            background-color: antiquewhite;
+        }
+        .lead-btn {
+            width: 287px;
+            font-size: 1.2em;
+            padding: 0.6em 1.2em;
+            background: #2749C8;
+            color: white;
+            border-radius: 5px;
+            border: 0;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+            border-bottom: 5px solid #072998;
+        }
+        .tt {
+            font-size: 1.2em;
+            padding: 0.6em 1.2em;
+            border-radius: 5px;
+            display: inline-block;
+            border: 0;
+        }
+        .result_msg {
+
+        }
+
+    </style>
+</head>
+<body>
+    <form onsubmit="return validate()" method="post">
+        <div align="center"><input type="text" name="main_phone" id="phone" placeholder="Введите номер телефона" class="tt"></div>
+        <br>
+        <br> 
+        <!-- Вставка сообщения в зависимости от результата (успешно/не успешно) -->
+        <!-- <div class="result_msg" data-success_msg="Ваш запрос успешно отправлен, сейчас наш менеджер Вам перезвонит."></div> -->
+        <br>
+        <div align="center"><input type="submit" value="Ввод" class="lead-btn"></div>
+    </form>
+
+
+    <div class="result_msg_error" data-success_msg="Ваш запрос успешно отправлен, сейчас наш менеджер Вам перезвонит." visibility: hidden>Пожалуйста, напишите номер Вашего телефона, чтобы мы могли с Вами связяться</div>
+    <div class="result_msg_success" data-success_msg="Ваш запрос успешно отправлен, сейчас наш менеджер Вам перезвонит." visibility: hidden>Ваш запрос успешно отправлен, сейчас наш менеджер Вам перезвонит.</div>
+    
+<!-- Всплывающее окно, если пользователь ничего не ввел, а просто нажал кнопку отправки формы -->
+    <!-- <div class="result_msg error" data-success_msg="Ваш запрос успешно отправлен, сейчас наш менеджер Вам перезвонит." style="opacity: 1; display: block;">Пожалуйста, напишите номер Вашего телефона, чтобы мы могли с Вами связяться</div> -->
+<!-- Всплывающее окно, если пользователь верно ввел данные на форму, и нажал кнопку отправки формы -->
+    <!-- <div class="result_msg success" data-success_msg="Ваш запрос успешно отправлен, сейчас наш менеджер Вам перезвонит." style="opacity: 1; display: block;">Ваш запрос успешно отправлен, сейчас наш менеджер Вам перезвонит.</div> -->
+
+    <script>
+        function validate() {
+            var pole1 = document.getElementById('phone');
+            // var msg = document.getElementsByClassName('result_msg');
+            // message
+            console.log(message);
+            // var pole2 = document.getElementById('verify_phone');
+            switch(pole1.value != "") {
+                case true:
+                    console.log("правильно");
+                    document.write("Вы ввели верные данные, Доступ разрешен.")
+                break;
+                default:
+                    alert("Данные не корректны");
+                    console.log("НЕ правильно");
+                    return false;
+            }
+
+
+
+            // if(pole1.value != "" && pole2.value != "") {
+            //     if(pole1.value == pole2.value) {
+            //         document.write("Вы ввели верные данные, Доступ разрешен.")
+            //         return true
+            //     }
+            // }
+            // alert("Данные не корректны");
+            // return false;
+        }
+
+    </script>
+</body>
+</html>

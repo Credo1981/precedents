@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Рекурсия</title>
+</head>
+<body>
+    <div>Рекурсия вместо цикла</div>
+    <script> 
+        // Поместим функцию console.log() в функцию log с параметором result
+        const log = (result) => console.log(result);
+        // Создадим рекурсию и будем использовать её вместо цикла
+        const countDown = (val, fn) => { // где val - переменная, fn - функция
+            fn(val) // тоже самое что и console.log(result), в частном случае -  console.log(10)
+            return (val > 0) ? countDown(val - 1, fn) : val /* если 10 > 0 то вызываем рекурсивно эту же 
+            функцию countDown с параметром 9, и функцию log. Когда val = 0, то выводим текущее значение в 
+            переменной val // 0
+            */
+        }
+        
+        countDown(10, log);
+        // 10
+        // 9
+        // 8
+        // 7
+        // 6
+        // 5
+        // 4
+        // 3
+        // 2
+        // 1
+        // 0
+    </script>
+    <div>Решение учителя</div>
+    // BEGIN
+  // Visualize Execution: https://goo.gl/UlTxCs
+    if (begin > end) {
+    return NaN;
+  } else if (begin === end) {
+    return begin;
+  }
+  return begin + sequenceSum(begin + 1, end);
+  // END
+    <script>
+        console.log('Решение учителя');
+        const sequenceSum = (begin, end) => {
+	  if (begin > end) {
+    	    return NaN;
+    	  } else if (begin === end) {
+    	    return begin;
+    	  }
+    	  
+    	  return begin + sequenceSum(begin + 1, end);
+    	}
+    	
+        result = sequenceSum(1, 5);
+        console.log(result);
+
+    </script>
+1	const sequenceSum = (begin, end) => {
+    2	  if (begin > end) {
+    3	    return NaN;
+    4	  } else if (begin === end) {
+    5	    return begin;
+    6	  }
+    7	  
+    8	  return begin + sequenceSum(begin + 1, end);
+    9	};
+    10	
+    11	result = sequenceSum(2, 6);
+
+</body>
+</html>
